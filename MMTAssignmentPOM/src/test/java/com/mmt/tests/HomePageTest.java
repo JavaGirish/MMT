@@ -31,6 +31,12 @@ public class HomePageTest extends TestBase {
 		testUtil = new TestUtil();
 	}
 
+	@Test(priority = 0)
+	public void closeAdbox() {
+		homePage.closeAdWindow();
+
+	}
+
 	@Test(priority = 1)
 	public void clickFlightsLink() {
 		homePage.clickOnFlightsLink();
@@ -66,12 +72,13 @@ public class HomePageTest extends TestBase {
 	@Test(priority = 7)
 	public void clickOnSearchBtn() {
 		homePage.clickOnSearchBtn();
+		driver.manage().deleteAllCookies();
 
 	}
 
-//	@AfterClass
-//	public void tearDown() {
-//		driver.quit();
-//	}
+	// @AfterClass
+	// public void tearDown() {
+	// driver.quit();
+	// }
 
 }

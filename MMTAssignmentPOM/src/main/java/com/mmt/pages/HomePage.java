@@ -42,11 +42,31 @@ public class HomePage extends TestBase {
 
 	@FindBy(xpath = "//a[text()='Search']")
 	WebElement searchBtn;
+	
+	
+	@FindBy(xpath="//iframe[@name='notification-frame-~19714b447']")
+	WebElement adFrame;
+	
+	@FindBy(xpath="//a[@id='webklipper-publisher-widget-container-notification-close-div']")
+	WebElement closeAdBtn;
+	
+	
 
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
 
+	public void closeAdWindow() {
+		
+		//TestUtil.wait(30,adFrame);
+		//TestUtil.switchToAdFrame();
+		closeAdBtn.click();
+		
+		
+	}
+	
+	
+	
 	public void clickOnFlightsLink() {
 		flightsLink.click();
 	}
@@ -89,6 +109,7 @@ public class HomePage extends TestBase {
 	public SearchPage clickOnSearchBtn() {
 		TestUtil.wait(10, searchBtn);
 		searchBtn.click();
+		driver.manage().deleteAllCookies();
 		return new SearchPage();
 		
 	}

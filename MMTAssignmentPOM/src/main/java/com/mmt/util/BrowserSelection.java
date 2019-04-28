@@ -4,8 +4,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.mmt.base.TestBase;
 
@@ -18,8 +20,12 @@ public class BrowserSelection extends TestBase {
 	public static WebDriver selectBrowser(String browserName) {
 
 		if (browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Automation\\Drivers\\chromedriver_win32\\chromedriver.exe");
-			driver = new ChromeDriver();
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Girish Nair\\Desktop\\Selenium\\chromedriver_win32\\chromedriver.exe");
+			ChromeOptions options= new ChromeOptions();
+			options.addArguments("--incognito");
+			DesiredCapabilities cap= new DesiredCapabilities().chrome();
+			cap.setCapability(ChromeOptions.CAPABILITY, options);
+			driver = new ChromeDriver(cap);
 
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", ".\\lib\\geckodriver-v0.21.0-win32\\geckodriver.exe");
@@ -34,9 +40,7 @@ public class BrowserSelection extends TestBase {
 
 		}
 
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+		
 		return driver;
 	}
 

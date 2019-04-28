@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -50,5 +51,27 @@ public class TestUtil extends TestBase {
 			
 
 	}
+	
+	public static void switchToAdFrame() {
+		
+		driver.switchTo().frame("notification-frame-~19714b447");
+		
+	}
+	
+	
+	public static void scrollToBottomofpage() {
+		try { 
+			long lastHeight = (long) ((JavascriptExecutor) driver).executeScript("return document.body.scrollHeight"); 
+			while (true) { ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);"); 
+			Thread.sleep(2000); 
+			long newHeight = (long) ((JavascriptExecutor) driver).executeScript("return document.body.scrollHeight"); 
+			if (newHeight == lastHeight) { break; } lastHeight = newHeight; } } 
+		
+		
+		catch (InterruptedException e) 
+		{ e.printStackTrace(); }
+	}
+	
+	
 	
 }
