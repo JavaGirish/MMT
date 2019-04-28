@@ -47,6 +47,7 @@ public class SearchPage extends TestBase {
 				By.xpath("//div[@class='splitVw-sctn pull-right']//div[@class='fli-list splitVw-listing']"));
 		int totalRetFlights = totalRet.size();
 		System.out.println("Total Return flights are: " + totalRetFlights);
+		TestUtil.scrollToTopPage();
 	}
 
 }

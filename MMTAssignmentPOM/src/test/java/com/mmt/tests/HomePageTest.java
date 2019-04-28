@@ -1,7 +1,7 @@
 package com.mmt.tests;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.mmt.base.TestBase;
@@ -24,18 +24,18 @@ public class HomePageTest extends TestBase {
 	// @test -- execute test case
 	// after each test case -- close the browser
 
-	@BeforeClass
+	@BeforeMethod
 	public void setUp() {
 		initilization();
 		homePage = new HomePage();
 		testUtil = new TestUtil();
 	}
 
-	@Test(priority = 0)
-	public void closeAdbox() {
-		homePage.closeAdWindow();
-
-	}
+//	@Test(priority = 0)
+//	public void closeAdbox() {
+//		homePage.closeAdWindow();
+//
+//	}
 
 	@Test(priority = 1)
 	public void clickFlightsLink() {
@@ -76,9 +76,9 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	// @AfterClass
-	// public void tearDown() {
-	// driver.quit();
-	// }
+	@AfterMethod
+	 public void tearDown() {
+	 driver.quit();
+	 }
 
 }

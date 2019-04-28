@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -65,13 +66,20 @@ public class TestUtil extends TestBase {
 			while (true) { ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);"); 
 			Thread.sleep(2000); 
 			long newHeight = (long) ((JavascriptExecutor) driver).executeScript("return document.body.scrollHeight"); 
-			if (newHeight == lastHeight) { break; } lastHeight = newHeight; } } 
+			if (newHeight == lastHeight) 
+			{ break; } 
+			lastHeight = newHeight; } } 
 		
 		
 		catch (InterruptedException e) 
 		{ e.printStackTrace(); }
 	}
 	
-	
+	public static void scrollToTopPage() {
+		WebElement element =  driver.findElement(By.xpath("//span[@class='logoContainer']"));   
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView();", element); 
+		
+	}
 	
 }

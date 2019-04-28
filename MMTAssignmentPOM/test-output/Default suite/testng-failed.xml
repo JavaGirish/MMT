@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.mmt.tests.SearchPageTest">
+      <class name="com.mmt.tests.FilterPageTest">
         <methods>
-          <include name="getTotalDepartureFlights"/>
-          <include name="tearDown"/>
+          <include name="selectNonStopFilter"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.mmt.tests.SearchPageTest -->
+      </class> <!-- com.mmt.tests.FilterPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
