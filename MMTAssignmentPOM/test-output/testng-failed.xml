@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
-  <test thread-count="5" name="Test(failed)" parallel="methods">
+  <listeners>
+    <listener class-name="com.mmt.extentreports.ExtentReporterNG"/>
+  </listeners>
+  <test thread-count="5" name="Test3(failed)" parallel="methods">
     <classes>
       <class name="com.mmt.tests.BookingPageTest">
         <methods>
@@ -10,13 +13,6 @@
           <include name="selectDepFlight"/>
         </methods>
       </class> <!-- com.mmt.tests.BookingPageTest -->
-      <class name="com.mmt.tests.FilterPageTest">
-        <methods>
-          <include name="selectNonStopFilter"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.mmt.tests.FilterPageTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test3(failed) -->
 </suite> <!-- Failed suite [Suite] -->
