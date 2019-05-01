@@ -19,6 +19,8 @@ public class TestUtil extends TestBase {
 	public static String ToCity = "Bangalore";
 	public static String depDate;
 	public static String returnDate;
+	public static int depIndex= 3;
+	public static int retIndex=2;
 
 	public static void wait(int timeout, WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, timeout);

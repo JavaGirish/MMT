@@ -35,7 +35,7 @@ public class FilterPage extends TestBase{
 	}
 	
 	public void selectOneStopFilter() {
-		System.out.println("Selecting Non Stop Filter...");
+		System.out.println("Selecting One Stop Filter...");
 		oneStopCheckBox.click();
 		System.out.println("One Stop Filter Selected...");
 		

@@ -80,13 +80,14 @@ public class HomePage extends TestBase {
 		fromCityBtn.click();
 		TestUtil.wait(10, fromCityInput);
 		fromCityInput.sendKeys(fromCity);
+		TestUtil.wait(10, fromCitydropbox);
 		fromCitydropbox.click();
 	}
 
 	public void inputToCity(String toCity) {
 		TestUtil.wait(10, toCityInput);
 		toCityInput.sendKeys(toCity);
-		TestUtil.wait(10, toCityDropbox);
+		TestUtil.wait(15, toCityDropbox);
 		toCityDropbox.click();
 	}
 
