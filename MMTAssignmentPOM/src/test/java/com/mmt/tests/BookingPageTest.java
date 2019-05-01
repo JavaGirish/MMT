@@ -50,10 +50,15 @@ public class BookingPageTest extends TestBase {
 		int finalDepAmount = bookingPage.getfinalDepPrice();
 		int finalRetAmount = bookingPage.getfinalRetPrice();
 		int totalAmount = bookingPage.calculateTotalAmount();
+		
 		Assert.assertEquals(depAmount, finalDepAmount);
-
+		System.out.println("Price of departure flight selected: " + finalDepAmount);
+		
 		Assert.assertEquals(retAmount, finalRetAmount);
+		System.out.println("Price of return flight selected: " + finalRetAmount);
+		
 		Assert.assertEquals(totalAmount, (finalDepAmount + finalRetAmount));
+		System.out.println("Total amount based on flight selection: " + totalAmount);
 
 	}
 
